@@ -39,5 +39,11 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 # USING IT AS DEAMON
 ```shell
-docker run -d -v $HOME/src:/root/src --name cpp-dev-env fightinggg/cpp-dev-env bash -c "while true; do sleep 100; done;"
+docker run -d \
+--net host \
+--privileged  \
+-v  $HOME/src:/root/src \
+--name cpp-dev-env \
+fightinggg/cpp-dev-env \
+bash -c "while true; do sleep 100; done;"
 ```
