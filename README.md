@@ -1,11 +1,11 @@
 # cpp-dev-env
 c++ develepment Docker Version!
 
-# HOW TO USE?
+# HOW TO TRY?
 
 ## First. 
 you should has a workspace , in this example we have project in $HOME/src
-```
+```shell
 docker run -it --rm -v $HOME/src:/root/src fightinggg/cpp-dev-env bash
 ```
 
@@ -37,4 +37,7 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
            <command> [<args>]
 ```
 
-
+# USING IT AS DEAMON
+```shell
+docker run -d -v $HOME/src:/root/src --name cpp-dev-env fightinggg/cpp-dev-env bash -c "while true; do sleep 100; done;"
+```
