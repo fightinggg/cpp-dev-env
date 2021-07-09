@@ -46,11 +46,15 @@ docker build -t cpp-dev-env .
 ## First RUN BACKEND
 ```shell
 docker run -d \
---privileged  \
+--privileged \
 -p 2222:22 \
--v  $HOME/src:/root/src \
+-v $HOME/src:/root/src \
 --name cpp-dev-env \
 fightinggg/cpp-dev-env
+```
+notices: it doesn't work on windows?  then using this
+```shell
+docker run -d --privileged -p 2222:22 -v $HOME/src:/root/src --name cpp-dev-env fightinggg/cpp-dev-env
 ```
 ## Second OPEN YOUR PROJECT USING CLION 
 click File-settings-Build-Toolchains
