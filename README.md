@@ -69,8 +69,8 @@ Credentials:
   Pasword: 123456
 ```
 
-![](./20210709232106.png)
-![](./20210709232402.png)
+![](https://github.com/fightinggg/cpp-dev-env/raw/master/20210709232106.png)
+![](https://github.com/fightinggg/cpp-dev-env/raw/master/20210709232402.png)
 
 ## Thrid Enjoy Yourself
 now you can use clion write program on centos platform
