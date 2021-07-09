@@ -37,13 +37,36 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
            <command> [<args>]
 ```
 
-# USING IT AS DEAMON
+# HOW TO BUILD
+```shell
+docker build -t cpp-dev-env .
+```
+
+# USING With SSH BACKEND AND DEVELOPMEND WITH CLION
+## First RUN BACKEND
 ```shell
 docker run -d \
---net host \
 --privileged  \
+-p 2222:22 \
 -v  $HOME/src:/root/src \
 --name cpp-dev-env \
-fightinggg/cpp-dev-env \
-bash -c "while true; do sleep 100; done;"
+fightinggg/cpp-dev-env
 ```
+## Second OPEN YOUR PROJECT USING CLION 
+click File-settings-Build-Toolchains
+
+add 'Remote Host'
+```
+Credentials:
+  Host: localhost
+  Port: 2222
+  User name: root
+  Authentication type: Password
+  Pasword: 123456
+```
+
+![](./20210709232106.png)
+![](./20210709232402.png)
+
+## Thrid Enjoy Yourself
+now you can use clion write program on centos platform
