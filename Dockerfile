@@ -3,6 +3,9 @@ RUN yum install git gcc-c++ make cmake gdb -y
 # BUGS for centos:8 https://bugs.centos.org/view.php?id=18212
 RUN yum install libarchive-3.3.3-1.el8.x86_64 -y
 
+# install rsync for clion
+RUN yum install rsync -y
+
 RUN yum install openssh-server openssh-clients passwd  -y; \
 sed -i "s/^UsePAM yes/UsePAM no/g" /etc/ssh/sshd_config; \
 echo 123456 | passwd root --stdin; \
