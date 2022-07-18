@@ -1,5 +1,13 @@
 FROM centos:8
+
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
+&& sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* \
+&& curl https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo -L -o /etc/yum.repos.d/CentOS-Base.repo \
+&& yum clean all \
+&& yum makecache 
+
 RUN yum install git gcc-c++ make cmake gdb -y
+
 # BUGS for centos:8 https://bugs.centos.org/view.php?id=18212
 RUN yum install libarchive-3.3.3-1.el8.x86_64 -y
 
