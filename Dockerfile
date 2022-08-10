@@ -6,7 +6,7 @@ RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
 && yum clean all \
 && yum makecache 
 
-RUN yum install git gcc-c++ make cmake gdb -y
+RUN yum install git gcc-c++ make cmake gdb clang lldb -y
 
 # BUGS for centos:8 https://bugs.centos.org/view.php?id=18212
 RUN yum install libarchive-3.3.3-1.el8.x86_64 -y
