@@ -6,7 +6,7 @@ c++ develepment Docker Version!
 ## First. 
 you should has a workspace , in this example we have project in $HOME/src
 ```shell
-docker run -it --rm -v $HOME/src:/root/src fightinggg/cpp-dev-env bash
+docker run -it --rm -v $HOME/src:/root/src fightinggg/cpp-dev-env:master bash
 ```
 
 ## Second. 
@@ -50,11 +50,11 @@ docker run -d \
 -p 2222:22 \
 -v $HOME/src:/root/src \
 --name cpp-dev-env \
-fightinggg/cpp-dev-env
+fightinggg/cpp-dev-env:master
 ```
 notices: it doesn't work on windows?  then using this
 ```shell
-docker run -d --privileged -p 2222:22 -v $HOME/src:/root/src --name cpp-dev-env fightinggg/cpp-dev-env
+docker run -d --privileged -p 2222:22 -v $HOME/src:/root/src --name cpp-dev-env fightinggg/cpp-dev-env:master
 ```
 ## Second OPEN YOUR PROJECT USING CLION 
 click File-settings-Build-Toolchains
